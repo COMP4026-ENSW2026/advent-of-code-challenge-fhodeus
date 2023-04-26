@@ -9,12 +9,12 @@ higher_calorie = 0
 current_calorie = 0
 
 # loop
-for line in calories_array:
-    if line:
-        current_calorie = current_calorie + int(line)
-        pass
-    elif current_calorie > higher_calorie:
-        higher_calorie = current_calorie
-        current_calorie = 0
+for calories in calories_array:
+  if calories == '':
+    if current_calorie > higher_calorie:
+      higher_calorie = current_calorie
+    current_calorie = 0
+  else:
+    current_calorie += int(calories)
 
 print(higher_calorie)
